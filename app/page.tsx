@@ -17,7 +17,7 @@ export default function Home() {
           Hi! My name is Afif Zafri.
         </h1>
         <p style={{ fontSize: '1.25rem' }}>
-          I'm a full stack developer based in Malaysia.
+          I&apos;m a full stack developer based in Malaysia.
         </p>
 
         <div style={{
