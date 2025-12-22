@@ -1,8 +1,44 @@
 'use client';
 
 import { FaLinkedin, FaTwitter, FaGithub, FaTiktok } from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
+// Reusable SocialIcon component
+function SocialIcon({ Icon, url }: { Icon: IconType; url: string }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: '#000',
+        fontSize: '2rem',
+        transition: 'all 0.3s ease',
+        opacity: '0.6',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'scale(1.2)';
+        e.currentTarget.style.opacity = '1';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'scale(1)';
+        e.currentTarget.style.opacity = '0.6';
+      }}
+    >
+      <Icon />
+    </a>
+  );
+}
 
 export default function Home() {
+  // Social links data
+  const socialLinks = [
+    { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/' },
+    { icon: FaGithub, url: 'https://github.com/afzafri' },
+    { icon: FaTwitter, url: 'https://twitter.com/afzafri' },
+    { icon: FaTiktok, url: 'https://www.tiktok.com/@afzafri' },
+  ];
+
   return (
     <main style={{
       minHeight: '100vh',
@@ -23,69 +59,13 @@ export default function Home() {
         <div style={{
           marginTop: '2rem',
           display: 'flex',
-          gap: '1.5rem',
+          gap: '1rem',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}>
-          <a
-            href="https://www.linkedin.com/in/afifzafri/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#0A66C2',
-              fontSize: '2rem',
-              transition: 'transform 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <FaLinkedin />
-          </a>
-
-          <a
-            href="https://github.com/afzafri"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#333',
-              fontSize: '2rem',
-              transition: 'transform 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <FaGithub />
-          </a>
-
-          <a
-            href="https://twitter.com/afzafri"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#1DA1F2',
-              fontSize: '2rem',
-              transition: 'transform 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <FaTwitter />
-          </a>
-
-          <a
-            href="https://www.tiktok.com/@afzafri"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#000',
-              fontSize: '2rem',
-              transition: 'transform 0.2s',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <FaTiktok />
-          </a>
+          {socialLinks.map((link, index) => (
+            <SocialIcon key={index} Icon={link.icon} url={link.url} />
+          ))}
         </div>
       </div>
     </main>
