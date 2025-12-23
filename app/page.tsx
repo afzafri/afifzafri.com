@@ -1,30 +1,39 @@
+'use client';
+
 import SocialIcon from '@/components/SocialIcon';
+import FloatingSidebar from '@/components/FloatingSidebar';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
+import { Element } from 'react-scroll';
 
 export default function Home() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Hi! My name is Afif Zafri.
-          </h1>
-          <p className="hero-subtitle">
-            I&apos;m a full stack developer based in Malaysia.
-          </p>
+      <FloatingSidebar />
 
-          <div className="social-links">
-            {socialLinks.map((link, index) => (
-              <SocialIcon key={index} Icon={link.icon} url={link.url} />
-            ))}
+      {/* Hero Section */}
+      <Element name="hero">
+        <section className="hero-section">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Hi! My name is Afif Zafri.
+            </h1>
+            <p className="hero-subtitle">
+              I&apos;m a full stack developer based in Malaysia.
+            </p>
+
+            <div className="social-links">
+              {socialLinks.map((link, index) => (
+                <SocialIcon key={index} Icon={link.icon} url={link.url} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Element>
 
       {/* About Section */}
-      <section className="about-section">
+      <Element name="about">
+        <section className="about-section">
         <h2 className="section-title">About</h2>
 
         {/* Introduction */}
@@ -93,6 +102,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Element>
     </main>
   );
 }
