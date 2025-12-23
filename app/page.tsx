@@ -50,20 +50,42 @@ export default function Home() {
       {/* About Section */}
       <Element name="about">
         <section className="about-section">
-        <h2 className="section-title">About</h2>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          About
+        </motion.h2>
 
         {/* Introduction */}
-        <div className="intro">
+        <motion.div
+          className="intro"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <p>
             I lead development teams building enterprise web applications, specializing in Laravel-based solutions with modern cloud infrastructure. Currently based in Ara Damansara, Selangor.
           </p>
           <p>
             I work across the full stack, from database design and API development to frontend interfaces and cloud deployments. My focus is on scalable, production-ready systems that solve real business problems.
           </p>
-        </div>
+        </motion.div>
 
         {/* What I Do */}
-        <h3 className="subsection-title">What I Do</h3>
+        <motion.h3
+          className="subsection-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          What I Do
+        </motion.h3>
         <div className="what-i-do-grid">
           {whatIDo.map((item, index) => {
             return (
@@ -86,43 +108,75 @@ export default function Home() {
         </div>
 
         {/* Tech Stack */}
-        <h3 className="subsection-title">Tech Stack</h3>
+        <motion.h3
+          className="subsection-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          Tech Stack
+        </motion.h3>
         <div className="tech-stack">
-          <div className="tech-category">
+          <motion.div
+            className="tech-category"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <h4 className="tech-category-title">Backend Development</h4>
             <div className="tech-tags">
               {techStack.backend.map((tech, i) => (
                 <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="tech-category">
+          <motion.div
+            className="tech-category"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <h4 className="tech-category-title">Frontend Development</h4>
             <div className="tech-tags">
               {techStack.frontend.map((tech, i) => (
                 <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="tech-category">
+          <motion.div
+            className="tech-category"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <h4 className="tech-category-title">DevOps & Infrastructure</h4>
             <div className="tech-tags">
               {techStack.devops.map((tech, i) => (
                 <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="tech-category">
+          <motion.div
+            className="tech-category"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <h4 className="tech-category-title">Additional Technologies</h4>
             <div className="tech-tags">
               {techStack.additional.map((tech, i) => (
                 <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       </Element>
