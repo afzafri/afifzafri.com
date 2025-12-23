@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Home, User } from 'lucide-react';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 type NavKey = 'hero' | 'about';
 
@@ -15,7 +16,13 @@ export default function FloatingSidebar() {
     const [active, setActive] = useState<NavKey>('hero');
 
     return (
-        <nav aria-label="Quick navigation" className="floating-sidebar">
+        <motion.nav
+            aria-label="Quick navigation"
+            className="floating-sidebar"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        >
             {NAV.map(({ key, label, icon: Icon }) => {
                 const isActive = active === key;
 
@@ -49,6 +56,6 @@ export default function FloatingSidebar() {
                     </Link>
                 );
             })}
-        </nav>
+        </motion.nav>
     );
 }

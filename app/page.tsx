@@ -4,6 +4,7 @@ import SocialIcon from '@/components/SocialIcon';
 import FloatingSidebar from '@/components/FloatingSidebar';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { Element } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 export default function Home() {
 
@@ -15,18 +16,33 @@ export default function Home() {
       <Element name="hero">
         <section className="hero-section">
           <div className="hero-content">
-            <h1 className="hero-title">
-              👋🏻 Hi! My name is <strong>Afif Zafri</strong>.
-            </h1>
-            <p className="hero-subtitle">
+            <motion.h1
+              className="hero-title"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              👋🏻 Hi! My name is <strong className="name-nowrap">Afif Zafri</strong>.
+            </motion.h1>
+            <motion.p
+              className="hero-subtitle"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
               I&apos;m a <strong>full stack developer</strong> based in Malaysia.
-            </p>
+            </motion.p>
 
-            <div className="social-links">
+            <motion.div
+              className="social-links"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
               {socialLinks.map((link, index) => (
                 <SocialIcon key={index} Icon={link.icon} url={link.url} />
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
       </Element>
@@ -51,13 +67,20 @@ export default function Home() {
         <div className="what-i-do-grid">
           {whatIDo.map((item, index) => {
             return (
-              <div key={index} className="what-i-do-item">
+              <motion.div
+                key={index}
+                className="what-i-do-item"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 <h4>
                   <span className="what-i-do-icon"><item.icon /></span>
                   {item.title}
                 </h4>
                 <p>{item.desc}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
