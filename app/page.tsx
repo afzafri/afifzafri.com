@@ -8,11 +8,17 @@ import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { useState } from 'react';
+import Masonry from 'react-masonry-css';
 
 export default function Home() {
   const [activeProjectType, setActiveProjectType] = useState<string>('web');
 
   const filteredProjects = personalProjects.filter(p => p.type === activeProjectType);
+
+  const breakpointColumns = {
+    default: 2,
+    768: 1
+  };
 
   return (
     <main>
@@ -231,9 +237,13 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="projects-list"
           >
-            {filteredProjects.map((project, index) => (
+            <Masonry
+              breakpointCols={breakpointColumns}
+              className="projects-list"
+              columnClassName="projects-list-column"
+            >
+              {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 className="project-item"
@@ -300,6 +310,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+            </Masonry>
           </motion.div>
         </section>
       </Element>
