@@ -3,10 +3,16 @@
 import SocialIcon from '@/components/SocialIcon';
 import FloatingSidebar from '@/components/FloatingSidebar';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
+import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
+import { ExternalLink, Github } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Home() {
+  const [activeProjectType, setActiveProjectType] = useState<string>('web');
+
+  const filteredProjects = personalProjects.filter(p => p.type === activeProjectType);
 
   return (
     <main>
@@ -179,6 +185,123 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+      </Element>
+
+      {/* Personal Projects Section */}
+      <Element name="personal-projects">
+        <section className="personal-projects-section">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            Personal Projects
+          </motion.h2>
+
+          {/* Project Type Tabs */}
+          <motion.div
+            className="project-tabs"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
+            {projectTypes.map((type, index) => (
+              <motion.button
+                key={type.key}
+                onClick={() => setActiveProjectType(type.key)}
+                className={`project-tab ${activeProjectType === type.key ? 'active' : ''}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileHover={{ scale: 1.08, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {type.label}
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Projects List */}
+          <motion.div
+            key={activeProjectType}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="projects-list"
+          >
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className="project-item"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <div className="project-content">
+                  <div className="project-header">
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-subtitle">{project.subtitle}</p>
+                  </div>
+
+                  <p className="project-description">{project.description}</p>
+
+                  {project.features && (
+                    <ul className="project-features">
+                      {project.features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="project-meta">
+                    <div className="project-stack">
+                      {project.stack.map((tech, i) => (
+                        <span key={i} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+
+                    {project.timeline && (
+                      <p className="project-timeline">{project.timeline}</p>
+                    )}
+                  </div>
+
+                  {(project.demo || project.github || project.packagist || project.paper) && (
+                    <div className="project-links">
+                      {project.demo && (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+                          <ExternalLink size={16} />
+                          Demo
+                        </a>
+                      )}
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                          <Github size={16} />
+                          GitHub
+                        </a>
+                      )}
+                      {project.packagist && (
+                        <a href={project.packagist} target="_blank" rel="noopener noreferrer" className="project-link">
+                          <ExternalLink size={16} />
+                          Packagist
+                        </a>
+                      )}
+                      {project.paper && (
+                        <a href={project.paper} target="_blank" rel="noopener noreferrer" className="project-link">
+                          <ExternalLink size={16} />
+                          Paper
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </section>
       </Element>
     </main>
   );
