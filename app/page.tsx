@@ -16,10 +16,10 @@ export default function Home() {
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="hero-title">
-              Hi! My name is Afif Zafri.
+              👋🏻 Hi! My name is <strong>Afif Zafri</strong>.
             </h1>
             <p className="hero-subtitle">
-              I&apos;m a full stack developer based in Malaysia.
+              I&apos;m a <strong>full stack developer</strong> based in Malaysia.
             </p>
 
             <div className="social-links">
