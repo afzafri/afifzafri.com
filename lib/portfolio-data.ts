@@ -1,4 +1,5 @@
 import { FaLinkedin, FaTwitter, FaGithub, FaTiktok } from 'react-icons/fa';
+import { Users, Handshake, Code2, Server, Rocket } from 'lucide-react';
 
 export const socialLinks = [
   { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/' },
@@ -15,9 +16,9 @@ export const techStack = {
 };
 
 export const whatIDo = [
-  { title: 'Team Leadership', desc: 'Lead full-stack development teams and coordinate project delivery' },
-  { title: 'Client Engagement', desc: 'Conduct requirement studies and technical consultations with enterprise clients' },
-  { title: 'Full-Stack Development', desc: 'Build end-to-end web applications from database to user interface' },
-  { title: 'Infrastructure Management', desc: 'Setup and maintain cloud and on-premise server environments' },
-  { title: 'DevOps & Deployment', desc: 'Implement CI/CD pipelines and containerized deployments' },
+  { title: 'Team Leadership', desc: 'Lead full-stack development teams and coordinate project delivery', icon: Users },
+  { title: 'Client Engagement', desc: 'Conduct requirement studies and technical consultations with enterprise clients', icon: Handshake },
+  { title: 'Full-Stack Development', desc: 'Build end-to-end web applications from database to user interface', icon: Code2 },
+  { title: 'Infrastructure Management', desc: 'Setup and maintain cloud and on-premise server environments', icon: Server },
+  { title: 'DevOps & Deployment', desc: 'Implement CI/CD pipelines and containerized deployments', icon: Rocket },
 ];

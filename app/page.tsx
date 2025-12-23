@@ -40,12 +40,17 @@ export default function Home() {
         {/* What I Do */}
         <h3 className="subsection-title">What I Do</h3>
         <div className="what-i-do-grid">
-          {whatIDo.map((item, index) => (
-            <div key={index} className="what-i-do-item">
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
-            </div>
-          ))}
+          {whatIDo.map((item, index) => {
+            return (
+              <div key={index} className="what-i-do-item">
+                <h4>
+                  <span className="what-i-do-icon"><item.icon /></span>
+                  {item.title}
+                </h4>
+                <p>{item.desc}</p>
+              </div>
+            );
+          })}
         </div>
 
         {/* Tech Stack */}
