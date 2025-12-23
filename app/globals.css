@@ -332,6 +332,11 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 100dvh;
+    min-height: 100svh;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
