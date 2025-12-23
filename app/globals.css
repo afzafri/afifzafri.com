@@ -11,4 +11,153 @@ body {
   background: #fff;
 }
 
-/* You can use your CSS/SCSS knowledge here */
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  color: #000;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* About Section */
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.intro {
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* What I Do Section */
+.subsection-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.what-i-do-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.what-i-do-item h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.what-i-do-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Tech Stack Section */
+.tech-stack {
+  margin-bottom: 3rem;
+}
+
+.tech-category {
+  margin-bottom: 1.5rem;
+}
+
+.tech-category:last-child {
+  margin-bottom: 0;
+}
+
+.tech-category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  padding: 0.4rem 0.8rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .subsection-title {
+    font-size: 1.25rem;
+  }
+
+  .what-i-do-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,73 +1,93 @@
-'use client';
-
-import { FaLinkedin, FaTwitter, FaGithub, FaTiktok } from 'react-icons/fa';
-import { IconType } from 'react-icons';
-
-// Reusable SocialIcon component
-function SocialIcon({ Icon, url }: { Icon: IconType; url: string }) {
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        color: '#000',
-        fontSize: '2rem',
-        transition: 'all 0.3s ease',
-        opacity: '0.6',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'scale(1.2)';
-        e.currentTarget.style.opacity = '1';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'scale(1)';
-        e.currentTarget.style.opacity = '0.6';
-      }}
-    >
-      <Icon />
-    </a>
-  );
-}
+import SocialIcon from '@/components/SocialIcon';
+import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 
 export default function Home() {
-  // Social links data
-  const socialLinks = [
-    { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/' },
-    { icon: FaGithub, url: 'https://github.com/afzafri' },
-    { icon: FaTwitter, url: 'https://twitter.com/afzafri' },
-    { icon: FaTiktok, url: 'https://www.tiktok.com/@afzafri' },
-  ];
 
   return (
-    <main style={{
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '2rem'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Hi! My name is Afif Zafri.
-        </h1>
-        <p style={{ fontSize: '1.25rem' }}>
-          I&apos;m a full stack developer based in Malaysia.
-        </p>
+    <main>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Hi! My name is Afif Zafri.
+          </h1>
+          <p className="hero-subtitle">
+            I&apos;m a full stack developer based in Malaysia.
+          </p>
 
-        <div style={{
-          marginTop: '2rem',
-          display: 'flex',
-          gap: '1rem',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          {socialLinks.map((link, index) => (
-            <SocialIcon key={index} Icon={link.icon} url={link.url} />
+          <div className="social-links">
+            {socialLinks.map((link, index) => (
+              <SocialIcon key={index} Icon={link.icon} url={link.url} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="about-section">
+        <h2 className="section-title">About</h2>
+
+        {/* Introduction */}
+        <div className="intro">
+          <p>
+            I lead development teams building enterprise web applications, specializing in Laravel-based solutions with modern cloud infrastructure. Currently based in Ara Damansara, Selangor.
+          </p>
+          <p>
+            I work across the full stack, from database design and API development to frontend interfaces and cloud deployments. My focus is on scalable, production-ready systems that solve real business problems.
+          </p>
+        </div>
+
+        {/* What I Do */}
+        <h3 className="subsection-title">What I Do</h3>
+        <div className="what-i-do-grid">
+          {whatIDo.map((item, index) => (
+            <div key={index} className="what-i-do-item">
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </div>
           ))}
         </div>
-      </div>
+
+        {/* Tech Stack */}
+        <h3 className="subsection-title">Tech Stack</h3>
+        <div className="tech-stack">
+          <div className="tech-category">
+            <h4 className="tech-category-title">Backend Development</h4>
+            <div className="tech-tags">
+              {techStack.backend.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="tech-category">
+            <h4 className="tech-category-title">Frontend Development</h4>
+            <div className="tech-tags">
+              {techStack.frontend.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="tech-category">
+            <h4 className="tech-category-title">DevOps & Infrastructure</h4>
+            <div className="tech-tags">
+              {techStack.devops.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="tech-category">
+            <h4 className="tech-category-title">Additional Technologies</h4>
+            <div className="tech-tags">
+              {techStack.additional.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
