@@ -27,7 +27,7 @@ export const techStack = [
   },
   {
     title: 'AI Integrations',
-    technologies: ['LLM API Integration (OpenAI, Gemini, Anthropic)', 'Prompt Engineering']
+    technologies: ['OpenAI', 'Gemini', 'Anthropic', 'Prompt Engineering']
   },
   {
     title: 'Additional Technologies',
