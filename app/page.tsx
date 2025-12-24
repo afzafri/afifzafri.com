@@ -238,7 +238,7 @@ export default function Home() {
                   <a
                     href={project.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="work-project-link"
                   >
                     <ExternalLink size={16} />
@@ -339,25 +339,25 @@ export default function Home() {
                   {(project.demo || project.github || project.packagist || project.paper) && (
                     <div className="project-links">
                       {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <a href={project.demo} target="_blank" rel="noopener" className="project-link">
                           <ExternalLink size={16} />
                           Demo
                         </a>
                       )}
                       {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <a href={project.github} target="_blank" rel="noopener" className="project-link">
                           <Github size={16} />
                           GitHub
                         </a>
                       )}
                       {project.packagist && (
-                        <a href={project.packagist} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <a href={project.packagist} target="_blank" rel="noopener" className="project-link">
                           <ExternalLink size={16} />
                           Packagist
                         </a>
                       )}
                       {project.paper && (
-                        <a href={project.paper} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <a href={project.paper} target="_blank" rel="noopener" className="project-link">
                           <ExternalLink size={16} />
                           Paper
                         </a>
