@@ -639,19 +639,21 @@ body {
   width: 44px;
   border-radius: 999px;
   background: var(--color-accent);
+  visibility: hidden;
   opacity: 0;
-  transition: all 220ms ease;
+  transition: width 300ms ease, padding 300ms ease, opacity 300ms ease, visibility 0ms ease 300ms;
   box-shadow: var(--shadow-pill);
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 16px;
-  padding-right: 48px;
+  padding-left: 0;
+  padding-right: 0;
   overflow: hidden;
 }
 
 .floating-sidebar-pill.active {
+  visibility: visible;
   opacity: 1;
   width: 44px;
   padding-left: 0;
@@ -663,10 +665,12 @@ body {
 }
 
 .floating-sidebar-item:hover .floating-sidebar-pill {
-  width: max-content;
+  visibility: visible;
   opacity: 1;
+  width: max-content;
   padding-left: 16px;
   padding-right: 48px;
+  transition: width 300ms ease, padding 300ms ease, opacity 300ms ease, visibility 0ms ease 0ms;
 }
 
 .floating-sidebar-item:hover .floating-sidebar-pill .floating-sidebar-label {
@@ -694,7 +698,12 @@ body {
   font-weight: 600;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 160ms ease;
+  transition: opacity 50ms ease 0ms;
+}
+
+.floating-sidebar-item:hover .floating-sidebar-label {
+  opacity: 1;
+  transition: opacity 120ms ease 80ms;
 }
 
 /* Theme Toggle */
@@ -718,10 +727,66 @@ body {
   transition: all 0.3s ease;
 }
 
-.theme-toggle:hover {
-  background: var(--color-accent);
+.theme-toggle-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: var(--color-text-dark);
+  transition: color 180ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
   color: var(--color-bg);
-  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle-pill {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
+  width: 44px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  visibility: hidden;
+  opacity: 0;
+  transition: width 300ms ease, padding 300ms ease, opacity 300ms ease, visibility 0ms ease 300ms;
+  box-shadow: var(--shadow-pill);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+
+.theme-toggle:hover .theme-toggle-pill {
+  visibility: visible;
+  opacity: 1;
+  width: max-content;
+  padding-left: 16px;
+  padding-right: 48px;
+  transition: width 300ms ease, padding 300ms ease, opacity 300ms ease, visibility 0ms ease 0ms;
+}
+
+.theme-toggle-label {
+  color: var(--color-hover-text);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 50ms ease 0ms;
+}
+
+.theme-toggle:hover .theme-toggle-label {
+  opacity: 1;
+  transition: opacity 120ms ease 80ms;
 }
 
 /* Responsive */
