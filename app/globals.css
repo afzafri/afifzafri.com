@@ -160,10 +160,10 @@ body {
 }
 
 .social-icon {
-  color: #000;
+  color: var(--color-text-dark);
   font-size: 2rem;
   transition: all 0.3s ease;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .social-icon:hover {
