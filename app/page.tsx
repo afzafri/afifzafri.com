@@ -5,6 +5,7 @@ import FloatingSidebar from '@/components/FloatingSidebar';
 import ThemeToggle from '@/components/ThemeToggle';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
+import { workProjects } from '@/lib/work-projects-data';
 import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
@@ -154,6 +155,100 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </Element>
+
+      {/* Work Projects Section */}
+      <Element name="work-projects">
+        <section className="work-projects-section">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            Work Projects
+          </motion.h2>
+
+          <Masonry
+            breakpointCols={breakpointColumns}
+            className="work-projects-list"
+            columnClassName="work-projects-list-column"
+          >
+            {workProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className="work-project-item"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                {/* Project Header */}
+                <div className="work-project-header">
+                  <h3 className="work-project-title">{project.title}</h3>
+                  <p className="work-project-subtitle">{project.subtitle}</p>
+                  <p className="work-project-role">{project.role}</p>
+                </div>
+
+                {/* Project Screenshot */}
+                <div className="work-project-screenshot">
+                  <img src={project.screenshot} alt={`${project.title} screenshot`} />
+                </div>
+
+                {/* Project Description */}
+                <p className="work-project-description">{project.description}</p>
+
+                {/* Key Contributions */}
+                {project.keyContributions && (
+                  <div className="work-project-features">
+                    <h4>Key Contributions</h4>
+                    <ul>
+                      {project.keyContributions.map((contribution, i) => (
+                        <li key={i}>{contribution}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Integrations */}
+                {project.integrations && (
+                  <div className="work-project-integrations">
+                    <h4>Integration Points</h4>
+                    <div className="tech-tags">
+                      {project.integrations.map((integration, i) => (
+                        <span key={i} className="tech-tag">{integration}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Tech Stack */}
+                <div className="work-project-tech">
+                  <h4>Tech Stack</h4>
+                  <div className="tech-tags">
+                    {project.techStack.map((tech, i) => (
+                      <span key={i} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project Link */}
+                <div className="work-project-links">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="work-project-link"
+                  >
+                    <ExternalLink size={16} />
+                    Visit {project.title}
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </Masonry>
+        </section>
       </Element>
 
       {/* Personal Projects Section */}
