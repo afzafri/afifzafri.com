@@ -86,7 +86,10 @@ export default function Home() {
               I lead and actively contribute to development teams building enterprise web applications, specializing in Laravel-based solutions with modern cloud infrastructure. I am currently based in Ara Damansara, Selangor.
             </p>
             <p>
-              I work hands-on across the full stack, from database design and API development to frontend interfaces and cloud deployments, while guiding technical direction. My focus is on scalable, production-ready systems that solve real business problems.
+              I work hands-on across the full stack, from database design and API development to frontend interfaces and cloud deployments, while guiding technical direction.
+            </p>
+            <p>
+              I am also involved in company-wide solution implementation, including server setup, internal tooling, and platform evaluations such as ticketing systems, API testing tools, and security or penetration testing platforms. My focus is on scalable, production-ready systems that solve real business problems.
             </p>
         </motion.div>
 
