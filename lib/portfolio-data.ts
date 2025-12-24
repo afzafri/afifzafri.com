@@ -9,17 +9,37 @@ export const socialLinks = [
   { icon: FaTiktok, url: 'https://www.tiktok.com/@afzafri' },
 ];
 
-export const techStack = {
-  backend: ['PHP', 'Laravel', 'RESTful APIs', 'WebSocket', 'MySQL', 'PostgreSQL', 'Oracle DB'],
-  frontend: ['Vue.js', 'jQuery', 'Bootstrap', 'Materialize CSS', 'HTML5', 'CSS3', 'JavaScript'],
-  devops: ['Docker', 'CI/CD', 'Linux', 'AWS', 'Azure', 'Alibaba Cloud'],
-  additional: ['Multi-tenant Architecture', 'WebSocket', 'Android', 'Git'],
-};
+export const techStack = [
+  {
+    title: 'Backend Development',
+    technologies: ['PHP', 'Laravel', 'RESTful APIs', 'WebSocket', 'MySQL', 'PostgreSQL', 'Oracle DB']
+  },
+  {
+    title: 'Frontend Development',
+    technologies: ['Vue.js', 'jQuery', 'Bootstrap', 'Materialize CSS', 'HTML5', 'CSS3', 'JavaScript']
+  },
+  {
+    title: 'DevOps & Infrastructure',
+    technologies: ['Docker', 'CI/CD', 'Linux', 'AWS', 'Azure', 'Alibaba Cloud']
+  },
+  {
+    title: 'Authentication & Security',
+    technologies: ['OAuth 2.0', 'SAML SSO', 'JWT-based Authentication']
+  },
+  {
+    title: 'AI Integrations',
+    technologies: ['LLM API Integration (OpenAI, Gemini, Anthropic)', 'Prompt Engineering']
+  },
+  {
+    title: 'Additional Technologies',
+    technologies: ['Multi-tenant Architecture', 'Android', 'Git']
+  },
+];
 
 export const whatIDo = [
   { title: 'Team Leadership', desc: 'Lead full-stack development teams and coordinate project delivery', icon: Users },
   { title: 'Client Engagement', desc: 'Conduct requirement studies and technical consultations with enterprise clients', icon: Handshake },
   { title: 'Full-Stack Development', desc: 'Build end-to-end web applications from database to user interface', icon: Code2 },
   { title: 'Infrastructure Management', desc: 'Setup and maintain cloud and on-premise server environments', icon: Server },
-  { title: 'DevOps & Deployment', desc: 'Implement CI/CD pipelines and containerized deployments', icon: Rocket },
+  { title: 'DevOps & Deployment', desc: 'Experience working with CI/CD pipelines and containerized deployment workflows', icon: Rocket }
 ];
