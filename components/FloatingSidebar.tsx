@@ -16,11 +16,6 @@ const NAV = [
 
 export default function FloatingSidebar() {
     const [active, setActive] = useState<NavKey>('hero');
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     useEffect(() => {
         // Read hash from URL on mount
@@ -62,7 +57,7 @@ export default function FloatingSidebar() {
         <motion.nav
             aria-label="Quick navigation"
             className="floating-sidebar"
-            initial={mounted ? { opacity: 0, x: 20, y: '-50%' } : false}
+            initial={{ opacity: 0, x: 20, y: '-50%' }}
             animate={{ opacity: 1, x: 0, y: '-50%' }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
         >
