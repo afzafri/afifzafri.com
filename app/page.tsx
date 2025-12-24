@@ -226,10 +226,17 @@ export default function Home() {
                 {/* Tech Stack */}
                 <div className="work-project-tech">
                   <h4>Tech Stack</h4>
-                  <div className="tech-tags">
-                    {project.techStack.map((tech, i) => (
-                      <span key={i} className="tech-tag">{tech}</span>
-                    ))}
+
+                  <div className="project-meta">
+                    <div className="tech-tags">
+                      {project.techStack.map((tech, i) => (
+                        <span key={i} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+
+                    {project.timeline && (
+                      <p className="project-timeline">{project.timeline}</p>
+                    )}
                   </div>
                 </div>
 
@@ -310,7 +317,12 @@ export default function Home() {
               >
                 <div className="project-content">
                   <div className="project-header">
-                    <h3 className="project-title">{project.title}</h3>
+                    <div className="project-title-row">
+                      <h3 className="project-title">{project.title}</h3>
+                      {project.tag && (
+                        <span className="project-tag">{project.tag}</span>
+                      )}
+                    </div>
                     <p className="project-subtitle">{project.subtitle}</p>
                   </div>
 

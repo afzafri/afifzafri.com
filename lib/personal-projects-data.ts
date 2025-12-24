@@ -66,6 +66,7 @@ export const personalProjects = [
     ],
     timeline: "Aug 2019 - Aug 2020",
     client: "Universiti Teknologi MARA (Perak) - Faculty of Business and Management",
+    tag: "Freelance",
     type: "web"
   },
   {
@@ -93,6 +94,7 @@ export const personalProjects = [
     ],
     timeline: "Aug 2018 - Jan 2019",
     context: "Final Year Project (Bachelor's Degree)",
+    tag: "FYP",
     github: "https://github.com/afzafri/BackPack-Track",
     type: "mobile"
   },
@@ -104,6 +106,7 @@ export const personalProjects = [
     stack: ["PHP", "JavaScript", "MySQL"],
     timeline: "Jul 2018 - Dec 2018",
     client: "Universiti Teknologi MARA (Seremban) - E-NR Student Representative",
+    tag: "Freelance",
     type: "web"
   },
   {
@@ -114,6 +117,7 @@ export const personalProjects = [
     stack: ["JavaScript"],
     timeline: "Mar 2018 - Jun 2018",
     context: "Developed for Universiti Teknologi MARA research",
+    tag: "Freelance",
     paper: "https://ideas.repec.org/a/arp/tjssrr/2018p83-89.html",
     type: "research"
   },
