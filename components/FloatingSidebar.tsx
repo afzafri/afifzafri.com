@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, User, Folder } from 'lucide-react';
-import { Link } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 type NavKey = 'hero' | 'about' | 'personal-projects';
@@ -15,6 +15,42 @@ const NAV = [
 
 export default function FloatingSidebar() {
     const [active, setActive] = useState<NavKey>('hero');
+
+    useEffect(() => {
+        // Read hash from URL on mount
+        const hash = window.location.hash.slice(1) as NavKey; // Remove the # symbol
+        if (hash && ['hero', 'about', 'personal-projects'].includes(hash)) {
+            setActive(hash);
+            // Scroll to the section when page loads with hash
+            setTimeout(() => {
+                scroller.scrollTo(hash, {
+                    duration: 400,
+                    smooth: 'linear',
+                });
+            }, 100);
+        }
+
+        // Listen for hash changes (e.g., browser back/forward)
+        const handleHashChange = () => {
+            const newHash = window.location.hash.slice(1) as NavKey;
+            if (newHash && ['hero', 'about', 'personal-projects'].includes(newHash)) {
+                setActive(newHash);
+                scroller.scrollTo(newHash, {
+                    duration: 400,
+                    smooth: 'linear',
+                });
+            }
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
+    const handleSetActive = (section: NavKey) => {
+        setActive(section);
+        // Update URL hash without triggering page jump
+        window.history.pushState(null, '', `#${section}`);
+    };
 
     return (
         <motion.nav
@@ -31,10 +67,10 @@ export default function FloatingSidebar() {
                     <Link
                         key={key}
                         to={key}
-                        smooth={true}
-                        duration={800}
+                        smooth="linear"
+                        duration={400}
                         spy={true}
-                        onSetActive={() => setActive(key)}
+                        onSetActive={() => handleSetActive(key)}
                         className="floating-sidebar-item"
                     >
                         {/* icon - always visible */}

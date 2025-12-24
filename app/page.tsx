@@ -2,6 +2,7 @@
 
 import SocialIcon from '@/components/SocialIcon';
 import FloatingSidebar from '@/components/FloatingSidebar';
+import ThemeToggle from '@/components/ThemeToggle';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { Element } from 'react-scroll';
@@ -23,6 +24,7 @@ export default function Home() {
   return (
     <main>
       <FloatingSidebar />
+      <ThemeToggle />
 
       {/* Hero Section */}
       <Element name="hero">
@@ -223,7 +225,6 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ scale: 1.08, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {type.label}

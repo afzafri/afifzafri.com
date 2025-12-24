@@ -1,7 +1,8 @@
-import { FaLinkedin, FaTwitter, FaGithub, FaTiktok } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaGithub, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import { Users, Handshake, Code2, Server, Rocket } from 'lucide-react';
 
 export const socialLinks = [
+  { icon: FaEnvelope, url: 'mailto:me@afifzafri.com' },
   { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/' },
   { icon: FaGithub, url: 'https://github.com/afzafri' },
   { icon: FaTwitter, url: 'https://twitter.com/afzafri' },
