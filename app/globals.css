@@ -273,6 +273,7 @@ body {
 .tech-tag {
   padding: 0.4rem 0.8rem;
   background-color: var(--color-tag-bg);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -282,6 +283,7 @@ body {
 .tech-tag:hover {
   background-color: var(--color-accent);
   color: var(--color-hover-text);
+  border-color: var(--color-accent);
   transform: scale(1.05) translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
