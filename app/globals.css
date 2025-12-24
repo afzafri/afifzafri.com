@@ -959,6 +959,14 @@ body {
     left: 50%;
     right: auto;
     transform: translate(-50%, -50%);
+    visibility: visible;
+    opacity: 1;
+    padding: 0;
+  }
+
+  .floating-sidebar-item:hover .floating-sidebar-icon,
+  .floating-sidebar-icon.active {
+    color: var(--color-bg);
   }
 
   .floating-sidebar-label {
