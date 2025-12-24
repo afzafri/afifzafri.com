@@ -65,6 +65,7 @@ export default function Home() {
             >
               <Link
                 to="work-projects"
+                href="#work-projects"
                 smooth="linear"
                 duration={400}
                 className="cta-button cta-primary"
@@ -86,7 +87,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             >
               {socialLinks.map((link, index) => (
-                <SocialIcon key={index} Icon={link.icon} url={link.url} />
+                <SocialIcon key={index} Icon={link.icon} url={link.url} label={link.label} />
               ))}
             </motion.div>
           </div>
@@ -224,7 +225,7 @@ export default function Home() {
 
                 {/* Project Screenshot */}
                 <div className="work-project-screenshot">
-                  <img src={project.screenshot} alt={`${project.title} screenshot`} />
+                  <img src={project.screenshot} alt={`${project.title} screenshot`} loading="lazy" />
                 </div>
 
                 {/* Project Description */}

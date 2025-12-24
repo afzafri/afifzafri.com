@@ -2,10 +2,10 @@ import { FaLinkedin, FaTwitter, FaGithub, FaTiktok, FaEnvelope } from 'react-ico
 import { Users, Handshake, Code2, Server, Rocket } from 'lucide-react';
 
 export const socialLinks = [
-  { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/' },
-  { icon: FaGithub, url: 'https://github.com/afzafri' },
-  { icon: FaTwitter, url: 'https://twitter.com/afzafri' },
-  { icon: FaTiktok, url: 'https://www.tiktok.com/@afzafri' },
+  { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/', label: 'LinkedIn' },
+  { icon: FaGithub, url: 'https://github.com/afzafri', label: 'GitHub' },
+  { icon: FaTwitter, url: 'https://twitter.com/afzafri', label: 'Twitter' },
+  { icon: FaTiktok, url: 'https://www.tiktok.com/@afzafri', label: 'TikTok' },
 ];
 
 export const techStack = [

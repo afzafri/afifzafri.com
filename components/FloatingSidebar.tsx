@@ -68,11 +68,13 @@ export default function FloatingSidebar() {
                     <Link
                         key={key}
                         to={key}
+                        href={`#${key}`}
                         smooth="linear"
                         duration={400}
                         spy={true}
                         onSetActive={() => handleSetActive(key)}
                         className="floating-sidebar-item"
+                        aria-label={label}
                     >
                         {/* icon - always visible */}
                         <Icon
