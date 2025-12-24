@@ -735,7 +735,7 @@ body {
   background: var(--color-accent);
   visibility: hidden;
   opacity: 0;
-  transition: width 300ms ease, padding 300ms ease, opacity 300ms ease, visibility 0ms ease 300ms;
+  transition: width 300ms ease, padding 300ms ease;
   box-shadow: var(--shadow-pill);
   z-index: 1;
   display: flex;
@@ -778,7 +778,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
   color: var(--color-text-dark);
-  transition: color 180ms ease;
+  transition: none;
 }
 
 .floating-sidebar-item:hover .floating-sidebar-icon,
@@ -950,6 +950,7 @@ body {
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
+    transition: none;
   }
 
   .floating-sidebar-item:hover .floating-sidebar-pill,
@@ -975,6 +976,7 @@ body {
 
   .floating-sidebar-icon {
     font-size: 18px;
+    transition: none;
   }
 
   /* Work Projects Mobile */
