@@ -6,7 +6,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { workProjects } from '@/lib/work-projects-data';
-import { Element } from 'react-scroll';
+import { Element, Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { useState } from 'react';
@@ -48,11 +48,42 @@ export default function Home() {
               I&apos;m a <strong>full stack developer</strong> based in Malaysia.
             </motion.p>
 
+            <motion.p
+              className="hero-tagline"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            >
+              Specializing in Laravel backend engineering and leading teams to build scalable enterprise solutions.
+            </motion.p>
+
+            <motion.div
+              className="hero-cta"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              <Link
+                to="work-projects"
+                smooth="linear"
+                duration={400}
+                className="cta-button cta-primary"
+              >
+                View My Work
+              </Link>
+              <a
+                href="mailto:me@afifzafri.com"
+                className="cta-button cta-secondary"
+              >
+                Get in Touch
+              </a>
+            </motion.div>
+
             <motion.div
               className="social-links"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             >
               {socialLinks.map((link, index) => (
                 <SocialIcon key={index} Icon={link.icon} url={link.url} />
@@ -188,7 +219,7 @@ export default function Home() {
                 <div className="work-project-header">
                   <h3 className="work-project-title">{project.title}</h3>
                   <p className="work-project-subtitle">{project.subtitle}</p>
-                  <p className="work-project-role">{project.role}</p>
+                  <span className="work-project-role glass-tag">{project.role}</span>
                 </div>
 
                 {/* Project Screenshot */}
@@ -320,7 +351,7 @@ export default function Home() {
                     <div className="project-title-row">
                       <h3 className="project-title">{project.title}</h3>
                       {project.tag && (
-                        <span className="project-tag">{project.tag}</span>
+                        <span className="project-tag glass-tag">{project.tag}</span>
                       )}
                     </div>
                     <p className="project-subtitle">{project.subtitle}</p>
