@@ -1,17 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Home, User, Briefcase, Folder } from 'lucide-react';
+import { Home, User, Briefcase, FolderKanban, Sparkles } from 'lucide-react';
 import { Link, scroller } from 'react-scroll';
 import { motion } from 'framer-motion';
 
-type NavKey = 'hero' | 'about' | 'work-projects' | 'personal-projects';
+type NavKey = 'hero' | 'about' | 'experience' | 'work-projects' | 'personal-projects';
 
 const NAV = [
     { key: 'hero', label: 'Home', icon: Home },
     { key: 'about', label: 'About', icon: User },
-    { key: 'work-projects', label: 'Work Projects', icon: Briefcase },
-    { key: 'personal-projects', label: 'Personal Projects', icon: Folder },
+    { key: 'experience', label: 'Experience', icon: Briefcase },
+    { key: 'work-projects', label: 'Work Projects', icon: FolderKanban },
+    { key: 'personal-projects', label: 'Personal Projects', icon: Sparkles },
 ] as const;
 
 export default function FloatingSidebar() {
@@ -20,7 +21,7 @@ export default function FloatingSidebar() {
     useEffect(() => {
         // Read hash from URL on mount
         const hash = window.location.hash.slice(1) as NavKey; // Remove the # symbol
-        if (hash && ['hero', 'about', 'work-projects', 'personal-projects'].includes(hash)) {
+        if (hash && ['hero', 'about', 'experience', 'work-projects', 'personal-projects'].includes(hash)) {
             setActive(hash);
             // Scroll to the section when page loads with hash
             setTimeout(() => {
@@ -34,7 +35,7 @@ export default function FloatingSidebar() {
         // Listen for hash changes (e.g., browser back/forward)
         const handleHashChange = () => {
             const newHash = window.location.hash.slice(1) as NavKey;
-            if (newHash && ['hero', 'about', 'work-projects', 'personal-projects'].includes(newHash)) {
+            if (newHash && ['hero', 'about', 'experience', 'work-projects', 'personal-projects'].includes(newHash)) {
                 setActive(newHash);
                 scroller.scrollTo(newHash, {
                     duration: 400,

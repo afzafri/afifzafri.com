@@ -6,6 +6,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { workProjects } from '@/lib/work-projects-data';
+import { experiences } from '@/lib/experience-data';
 import { Element, Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
@@ -187,6 +188,63 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </Element>
+
+      {/* Experience Section */}
+      <Element name="experience">
+        <section className="experience-section">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            Experience
+          </motion.h2>
+
+          <div className="timeline">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={exp.id}
+                className="timeline-item"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <p className="timeline-period">{exp.period}</p>
+                <div className="timeline-marker">
+                  <div className="timeline-dot"></div>
+                </div>
+                <div className="timeline-content">
+                  <div className="timeline-header">
+                    <div>
+                      <h3 className="timeline-role">{exp.role}</h3>
+                      <p className="timeline-company">{exp.company}</p>
+                    </div>
+                    <span className="timeline-type glass-tag">{exp.employmentType}</span>
+                  </div>
+                  <p className="timeline-location">{exp.location}</p>
+
+                  <ul className="timeline-responsibilities">
+                    {exp.responsibilities.map((resp, i) => (
+                      <li key={i}>{resp}</li>
+                    ))}
+                  </ul>
+
+                  {exp.skills && (
+                    <div className="timeline-skills">
+                      {exp.skills.map((skill, i) => (
+                        <span key={i} className="tech-tag">{skill}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
       </Element>
 
       {/* Work Projects Section */}

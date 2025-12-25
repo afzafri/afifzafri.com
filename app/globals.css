@@ -361,6 +361,154 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
+/* Experience Section */
+.experience-section {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 3rem auto 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 160px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent) 0%,
+    var(--color-accent) 50%,
+    transparent 100%
+  );
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 20px 1fr;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-period {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: right;
+  padding-top: 4px;
+  white-space: nowrap;
+}
+
+.timeline-marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 2px var(--color-accent);
+  z-index: 1;
+}
+
+.timeline-content {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateX(4px);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.timeline-type {
+  flex-shrink: 0;
+}
+
+.timeline-location {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.timeline-responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.timeline-responsibilities li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.timeline-responsibilities li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.timeline-responsibilities li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
 /* Work Projects Section */
 .work-projects-section {
   max-width: var(--max-width-container);
@@ -977,6 +1125,83 @@ body {
   .floating-sidebar-icon {
     font-size: 18px;
     transition: none;
+  }
+
+  /* Experience Mobile */
+
+  .experience-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .timeline {
+    max-width: 100%;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .timeline-period {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    position: relative;
+    z-index: 2;
+    background: var(--color-bg);
+    padding: 0 0.5rem;
+    display: inline-block;
+  }
+
+  .timeline-marker {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-dot {
+    margin-top: 0;
+    background: var(--color-accent);
+  }
+
+  .timeline-content {
+    width: 100%;
+    padding: 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  [data-theme="light"] .timeline-content {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  [data-theme="dark"] .timeline-content {
+    background: rgba(30, 35, 45, 1);
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .timeline-role {
+    font-size: 1.1rem;
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+
+  .timeline-type {
+    align-self: flex-start;
   }
 
   /* Work Projects Mobile */
