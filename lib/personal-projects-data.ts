@@ -96,6 +96,7 @@ export const personalProjects = [
     context: "Final Year Project (Bachelor's Degree)",
     tag: "FYP",
     github: "https://github.com/afzafri/BackPack-Track",
+    paper: "https://ir.uitm.edu.my/id/eprint/25147/",
     type: "mobile"
   },
   {
