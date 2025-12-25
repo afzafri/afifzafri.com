@@ -981,15 +981,27 @@ body {
 
   /* Work Projects Mobile */
 
+  .work-project-header {
+    margin-bottom: 1rem;
+  }
+
   .work-project-title {
     font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .work-project-subtitle {
     font-size: 0.9rem;
+    margin-bottom: 0.25rem;
   }
 
   .work-project-item {
     padding: 1.5rem;
+  }
+
+  /* Personal Projects Mobile */
+
+  .project-subtitle {
+    margin-top: 0.5rem;
   }
 }
