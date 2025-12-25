@@ -463,6 +463,16 @@ body {
   color: var(--color-text-light);
 }
 
+.timeline-company-link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.timeline-company-link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 .timeline-type {
   flex-shrink: 0;
 }
@@ -515,6 +525,14 @@ body {
   margin: 0 auto;
   padding: 4rem 2rem;
   min-height: 100vh;
+}
+
+.section-note {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-style: italic;
 }
 
 .work-projects-list {

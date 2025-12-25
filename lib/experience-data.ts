@@ -8,6 +8,7 @@ export interface Experience {
   current: boolean;
   responsibilities: string[];
   skills?: string[];
+  website?: string;
 }
 
 export const experiences: Experience[] = [
@@ -17,8 +18,9 @@ export const experiences: Experience[] = [
     company: "Red Ant Technology Sdn Bhd",
     employmentType: "Full-time",
     period: "Jan 2024 – Present",
-    location: "Petaling Jaya, Selangor, Malaysia (Hybrid)",
+    location: "Selangor, Malaysia",
     current: true,
+    website: "https://www.redant.my",
     responsibilities: [
       "Lead and manage the development team to ensure timely delivery and high-quality standards across projects",
       "Continue hands-on backend development using PHP and Laravel",
@@ -33,8 +35,9 @@ export const experiences: Experience[] = [
     company: "Red Ant Technology Sdn Bhd",
     employmentType: "Full-time",
     period: "Jul 2019 – Jan 2024",
-    location: "Greater Kuala Lumpur",
+    location: "Selangor, Malaysia",
     current: false,
+    website: "https://www.redant.my",
     responsibilities: [
       "Specialized in Laravel web application development and RESTful API design for enterprise-level solutions",
       "Delivered multiple large-scale projects for enterprise clients",
@@ -50,6 +53,7 @@ export const experiences: Experience[] = [
     period: "Feb 2019 – Jul 2019",
     location: "Selangor, Malaysia",
     current: false,
+    website: "https://www.redant.my",
     responsibilities: [
       "Introduced the Laravel framework to the team and led the transition for ongoing development",
       "Initiated backend development for Leaf CRM as the sole backend developer",

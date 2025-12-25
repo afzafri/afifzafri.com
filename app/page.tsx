@@ -221,7 +221,18 @@ export default function Home() {
                   <div className="timeline-header">
                     <div>
                       <h3 className="timeline-role">{exp.role}</h3>
-                      <p className="timeline-company">{exp.company}</p>
+                      {exp.website ? (
+                        <a
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener"
+                          className="timeline-company timeline-company-link"
+                        >
+                          {exp.company}
+                        </a>
+                      ) : (
+                        <p className="timeline-company">{exp.company}</p>
+                      )}
                     </div>
                     <span className="timeline-type glass-tag">{exp.employmentType}</span>
                   </div>
@@ -345,6 +356,16 @@ export default function Home() {
               </motion.div>
             ))}
           </Masonry>
+
+          <motion.p
+            className="section-note"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Additional client solutions delivered for Panasonic, Great Eastern Takaful, Toyo Tires, Prudential, and more
+          </motion.p>
         </section>
       </Element>
 
