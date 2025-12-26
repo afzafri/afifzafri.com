@@ -15,7 +15,7 @@ export const techStack = [
   },
   {
     title: 'Frontend Development',
-    technologies: ['Vue.js', 'jQuery', 'Bootstrap', 'Materialize CSS', 'HTML5', 'CSS3', 'JavaScript']
+    technologies: ['React', 'Next.js', 'Vue.js', 'jQuery', 'Bootstrap', 'Materialize CSS', 'HTML5', 'CSS3', 'JavaScript']
   },
   {
     title: 'DevOps & Infrastructure',

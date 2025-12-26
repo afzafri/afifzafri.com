@@ -3,6 +3,7 @@
 import SocialIcon from '@/components/SocialIcon';
 import FloatingSidebar from '@/components/FloatingSidebar';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { workProjects } from '@/lib/work-projects-data';
@@ -117,13 +118,10 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
             <p>
-              I lead and actively contribute to development teams building enterprise web applications, specializing in Laravel-based solutions with modern cloud infrastructure. I am currently based in Ara Damansara, Selangor.
+              With 6+ years of experience, I lead and actively contribute to development teams building enterprise web applications, specializing in Laravel-based solutions. I work hands-on across the full stack—from database design and API development to frontend interfaces and cloud deployments.
             </p>
             <p>
-              I work hands-on across the full stack, from database design and API development to frontend interfaces and cloud deployments, while guiding technical direction.
-            </p>
-            <p>
-              I am also involved in company-wide solution implementation, including server setup, internal tooling, and platform evaluations such as ticketing systems, API testing tools, and security or penetration testing platforms. My focus is on scalable, production-ready systems that solve real business problems.
+              I&apos;m also involved in company-wide solution implementation, including server setup, internal tooling, and platform evaluations. My focus is on scalable, production-ready systems that solve real business problems.
             </p>
         </motion.div>
 
@@ -494,6 +492,8 @@ export default function Home() {
           </motion.div>
         </section>
       </Element>
+
+      <Footer />
     </main>
   );
 }

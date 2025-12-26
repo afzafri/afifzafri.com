@@ -10,8 +10,8 @@
   --color-bg: #EEEEEE;
   --color-bg-card: rgba(255, 255, 255, 0.5);
   --color-bg-card-hover: rgba(255, 255, 255, 0.8);
-  --color-border: #eee;
-  --color-border-light: #ddd;
+  --color-border: #ddd;
+  --color-border-light: #ccc;
   --color-tag-bg: #e8e8e8;
   --color-accent: #333;
   --color-accent-hover: #000;
@@ -1247,4 +1247,38 @@ body {
   .project-subtitle {
     margin-top: 0.5rem;
   }
+
+  .footer {
+    padding: 2rem 1.5rem !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+    max-width: 100%;
+    padding: 0 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 2rem 2rem;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copyright {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  text-align: center;
 }

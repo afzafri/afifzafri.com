@@ -28,12 +28,21 @@ export const metadata: Metadata = {
     title: "Afif Zafri - Full Stack Developer & Team Lead",
     description: "Full Stack Developer & Team Lead specializing in Laravel/PHP. Building enterprise web solutions in Malaysia.",
     siteName: "Afif Zafri",
+    images: [
+      {
+        url: "https://afifzafri.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Afif Zafri - Full Stack Developer & Team Lead",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Afif Zafri - Full Stack Developer & Team Lead",
     description: "Full Stack Developer & Team Lead specializing in Laravel/PHP. Building enterprise web solutions in Malaysia.",
     creator: "@afzafri",
+    images: ["https://afifzafri.com/og-image.jpg"],
   },
 };
 
