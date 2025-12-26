@@ -371,7 +371,6 @@ body {
 
 .timeline {
   position: relative;
-  max-width: 900px;
   margin: 3rem auto 0;
 }
 
@@ -1146,10 +1145,6 @@ body {
   }
 
   /* Experience Mobile */
-
-  .experience-section {
-    padding: 3rem 1.5rem;
-  }
 
   .timeline {
     max-width: 100%;
