@@ -13,6 +13,7 @@ export const personalProjects = [
     description: "A simple web application for loading and playing IPTV channels from M3U playlists, featuring channel search and a built-in video player.",
     stack: ["JavaScript", "HTML5"],
     timeline: "Nov 2023 - Present",
+    github: "https://github.com/afzafri/IPTV-Player-Web-App",
     demo: "https://afzafri.github.io/IPTV-Player-Web-App/",
     type: "web"
   },
@@ -23,6 +24,7 @@ export const personalProjects = [
     description: "A browser-based reader supporting CBR/CBZ/CBT comic formats, allowing users to read digital comics directly in the browser.",
     stack: ["HTML5", "JavaScript"],
     timeline: "Apr 2017 - Present",
+    github: "https://github.com/afzafri/Web-Comic-Reader",
     demo: "https://afzafri.github.io/Web-Comic-Reader/",
     type: "web"
   },
@@ -37,6 +39,8 @@ export const personalProjects = [
       "No contact saving required",
       "Utilizes WhatsApp URL scheme"
     ],
+    timeline: "Mar 2017 - Present",
+    github: "https://github.com/afzafri/Whatsapp-Express",
     demo: "https://afzafri.github.io/Whatsapp-Express/",
     type: "web"
   },
@@ -95,7 +99,7 @@ export const personalProjects = [
     timeline: "Aug 2018 - Jan 2019",
     context: "Final Year Project (Bachelor's Degree)",
     tag: "FYP",
-    github: "https://github.com/afzafri/BackPack-Track",
+    github: "https://github.com/afzafri/BackPack-Track-Admin-Panel",
     paper: "https://ir.uitm.edu.my/id/eprint/25147/",
     type: "mobile"
   },
@@ -132,16 +136,5 @@ export const personalProjects = [
     packagist: "https://packagist.org/packages/afzafri/",
     services: ["Pos Laju", "Ninja Van"],
     type: "library"
-  },
-  {
-    id: "ktmb-train-checker",
-    title: "KTMB Train Checker",
-    subtitle: "Train Ticket Availability Checker",
-    description: "Web application for checking available KTMB train tickets, focusing on frontend development with modern UI frameworks.",
-    stack: ["jQuery", "Materialize CSS", "Animate.css"],
-    timeline: "Mar 2017 - Oct 2019",
-    github: "https://github.com/afzafri/KTMB-Train-Ticket-Checker",
-    status: "deprecated",
-    type: "web"
   }
 ];

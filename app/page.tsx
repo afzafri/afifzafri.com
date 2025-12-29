@@ -118,7 +118,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
             <p>
-              With 6+ years of experience, I lead and actively contribute to development teams building enterprise web applications, specializing in Laravel-based solutions. I work hands-on across the full stack—from database design and API development to frontend interfaces and cloud deployments.
+              With 6+ years of experience, I lead and actively contribute to development teams building enterprise web applications, specializing in Laravel-based solutions. I work hands-on across the full stack, from database design and API development to frontend interfaces and cloud deployments.
             </p>
             <p>
               I&apos;m also involved in company-wide solution implementation, including server setup, internal tooling, and platform evaluations. My focus is on scalable, production-ready systems that solve real business problems.
