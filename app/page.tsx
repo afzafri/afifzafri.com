@@ -11,13 +11,57 @@ import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { workProjects } from '@/lib/work-projects-data';
 import { experiences } from '@/lib/experience-data';
 import { Element, Link } from 'react-scroll';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { useState } from 'react';
 import Masonry from 'react-masonry-css';
 
+// Enhanced section reveal animation variants
+const sectionReveal = {
+  hidden: { 
+    opacity: 0, 
+    y: 40,
+    scale: 0.95,
+    filter: 'blur(10px)'
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.8
+    }
+  }
+};
+
+const itemReveal = {
+  hidden: { 
+    opacity: 0, 
+    y: 30,
+    scale: 0.9,
+    filter: 'blur(8px)'
+  },
+  visible: (i: number) => ({ 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.6,
+      delay: i * 0.1
+    }
+  })
+};
+
 export default function Home() {
   const [activeProjectType, setActiveProjectType] = useState<string>('web');
+  const { scrollY } = useScroll();
+  
+  // Parallax transforms for hero section
+  const heroY = useTransform(scrollY, [0, 500], [0, 150]);
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
   const filteredProjects = personalProjects.filter(p => p.type === activeProjectType);
 
@@ -34,7 +78,14 @@ export default function Home() {
       {/* Hero Section */}
       <Element name="hero">
         <section className="hero-section">
-          <div className="hero-content">
+          <motion.div 
+            className="hero-content"
+            style={{
+              y: heroY,
+              opacity: heroOpacity,
+              scale: heroScale,
+            }}
+          >
             <motion.h1
               className="hero-title"
               initial={{ opacity: 0, y: 30 }}
@@ -91,7 +142,7 @@ export default function Home() {
                 <SocialIcon key={index} Icon={link.icon} url={link.url} label={link.label} />
               ))}
             </motion.div>
-          </div>
+          </motion.div>
         </section>
       </Element>
 
@@ -100,10 +151,10 @@ export default function Home() {
         <section className="about-section">
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={sectionReveal}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
         >
           <ShinyText>About</ShinyText> Me
         </motion.h2>
@@ -111,10 +162,10 @@ export default function Home() {
         {/* Introduction */}
         <motion.div
           className="intro"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={sectionReveal}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
         >
             <p>
               With 6+ years of experience, I lead and actively contribute to development teams building enterprise web applications, specializing in Laravel-based solutions. I work hands-on across the full stack, from database design and API development to frontend interfaces and cloud deployments.
@@ -140,10 +191,11 @@ export default function Home() {
               <motion.div
                 key={index}
                 className="what-i-do-item"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={itemReveal}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <h4>
                   <span className="what-i-do-icon"><item.icon /></span>
@@ -170,10 +222,11 @@ export default function Home() {
             <motion.div
               key={index}
               className="tech-category"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={itemReveal}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
             >
               <h4 className="tech-category-title">{category.title}</h4>
               <div className="tech-tags">
@@ -192,10 +245,10 @@ export default function Home() {
         <section className="experience-section">
           <motion.h2
             className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
           >
             My <ShinyText>Experience</ShinyText>
           </motion.h2>
@@ -205,10 +258,11 @@ export default function Home() {
               <motion.div
                 key={exp.id}
                 className="timeline-item"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                variants={itemReveal}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <p className="timeline-period">{exp.period}</p>
                 <div className="timeline-marker">
@@ -260,10 +314,10 @@ export default function Home() {
         <section className="work-projects-section">
           <motion.h2
             className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
           >
             <ShinyText>Work</ShinyText> Projects
           </motion.h2>
@@ -277,10 +331,11 @@ export default function Home() {
               <motion.div
                 key={project.id}
                 className="work-project-item"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={itemReveal}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 {/* Project Header */}
                 <div className="work-project-header">
@@ -371,10 +426,10 @@ export default function Home() {
         <section className="personal-projects-section">
           <motion.h2
             className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
           >
             <ShinyText>Personal</ShinyText> Projects
           </motion.h2>
@@ -382,10 +437,10 @@ export default function Home() {
           {/* Project Type Tabs */}
           <motion.div
             className="project-tabs"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
           >
             {projectTypes.map((type, index) => (
               <motion.button
@@ -417,11 +472,12 @@ export default function Home() {
             >
               {filteredProjects.map((project, index) => (
               <motion.div
-                key={project.id}
+                key={`${activeProjectType}-${project.id}`}
                 className="project-item"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 30, scale: 0.9, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="project-content">
                   <div className="project-header">

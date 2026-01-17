@@ -554,10 +554,11 @@ body {
   width: 2px;
   background: linear-gradient(
     to bottom,
-    var(--color-accent) 0%,
-    var(--color-accent) 50%,
+    #2563eb 0%,
+    #2563eb 80%,
     transparent 100%
   );
+  opacity: 0.4;
 }
 
 .timeline-item {
@@ -587,6 +588,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 
 .timeline-dot {
   width: 14px;
