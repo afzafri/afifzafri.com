@@ -4,6 +4,8 @@ import SocialIcon from '@/components/SocialIcon';
 import FloatingSidebar from '@/components/FloatingSidebar';
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
+import ShinyText from '@/components/ShinyText';
+import ShinyButton from '@/components/ShinyButton';
 import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { workProjects } from '@/lib/work-projects-data';
@@ -39,7 +41,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              👋🏻 Hi! My name is <strong className="name-nowrap">Afif Zafri</strong>.
+              👋🏻 Hi! My name is <ShinyText className="name-nowrap">Afif Zafri</ShinyText>.
             </motion.h1>
             <motion.p
               className="hero-subtitle"
@@ -65,21 +67,18 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <Link
-                to="work-projects"
+              <ShinyButton
+                variant="primary"
                 href="#work-projects"
-                smooth="linear"
-                duration={400}
-                className="cta-button cta-primary"
               >
                 View My Work
-              </Link>
-              <a
+              </ShinyButton>
+              <ShinyButton
+                variant="secondary"
                 href="mailto:me@afifzafri.com"
-                className="cta-button cta-secondary"
               >
                 Get in Touch
-              </a>
+              </ShinyButton>
             </motion.div>
 
             <motion.div
@@ -106,7 +105,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          About
+          <ShinyText>About</ShinyText> Me
         </motion.h2>
 
         {/* Introduction */}
@@ -198,7 +197,7 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Experience
+            My <ShinyText>Experience</ShinyText>
           </motion.h2>
 
           <div className="timeline">
@@ -266,7 +265,7 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Work Projects
+            <ShinyText>Work</ShinyText> Projects
           </motion.h2>
 
           <Masonry
@@ -377,7 +376,7 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Personal Projects
+            <ShinyText>Personal</ShinyText> Projects
           </motion.h2>
 
           {/* Project Type Tabs */}
