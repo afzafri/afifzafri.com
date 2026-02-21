@@ -14,6 +14,7 @@ export const personalProjects = [
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Anthropic API"],
     timeline: "Feb 2026 - Present",
     github: "https://github.com/afzafri/talk-like-human",
+    demo: "https://humanize.afifzafri.com",
     type: "web"
   },
   {
