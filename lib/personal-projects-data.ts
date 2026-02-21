@@ -7,6 +7,16 @@ export const projectTypes = [
 
 export const personalProjects = [
   {
+    id: "talk-like-human",
+    title: "Talk Like Human",
+    subtitle: "AI Text Humanizer",
+    description: "A web app that rewrites AI-generated or robotic text to sound natural, fluid, and genuinely human. Supports multiple tone modes and is powered by OpenAI or Anthropic via a clean provider abstraction.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Anthropic API"],
+    timeline: "Feb 2026 - Present",
+    github: "https://github.com/afzafri/talk-like-human",
+    type: "web"
+  },
+  {
     id: "iptv-player",
     title: "IPTV Player Web App",
     subtitle: "Browser-Based IPTV Channel Player",
