@@ -7,6 +7,17 @@ export const projectTypes = [
 
 export const personalProjects = [
   {
+    id: "link2book",
+    title: "Link2Book",
+    subtitle: "Web Article to EPUB Converter",
+    description: "Converts web article links into clean EPUB books. Uses Playwright with stealth to render JavaScript-heavy pages, extract full article content, and package it with embedded images into a valid EPUB 3 file — ready for Apple Books, Kindle, or any e-reader.",
+    stack: ["Next.js", "TypeScript", "Playwright", "JSZip", "sharp"],
+    timeline: "Feb 2026 - Present",
+    github: "https://github.com/afzafri/link2book",
+    demo: "https://link2book.afifzafri.com",
+    type: "web"
+  },
+  {
     id: "talk-like-human",
     title: "Talk Like Human",
     subtitle: "AI Text Humanizer",
