@@ -7,6 +7,17 @@ export const projectTypes = [
 
 export const personalProjects = [
   {
+    id: "modkit-swatch",
+    title: "ModKit Swatch",
+    subtitle: "Gunpla & Model Kit Paint Color Matcher",
+    description: "Upload a reference photo of your Gunpla or scale model, click to sample any color, and instantly get ranked paint matches across Mr. Color, Tamiya, Gaianotes, Jumpwind, Hobby Mio, and more. Uses CIE2000 Delta E color science for perceptually accurate matching. Fully client-side, no backend required.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "chroma-js"],
+    timeline: "Mar 2026 - Present",
+    github: "https://github.com/afzafri/modkit-swatch",
+    demo: "https://modkitswatch.afifzafri.com",
+    type: "web"
+  },
+  {
     id: "link2book",
     title: "Link2Book",
     subtitle: "Web Article to EPUB Converter",
