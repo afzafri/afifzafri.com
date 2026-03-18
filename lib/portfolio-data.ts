@@ -12,11 +12,11 @@ export const socialLinks = [
 export const techStack = [
   {
     title: 'Backend Development',
-    technologies: ['PHP', 'Laravel', 'RESTful APIs', 'WebSocket', 'MySQL', 'PostgreSQL', 'Oracle DB']
+    technologies: ['PHP', 'Laravel', 'RESTful APIs', 'WebSocket', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle DB']
   },
   {
     title: 'Frontend Development',
-    technologies: ['React', 'Next.js', 'Vue.js', 'jQuery', 'Bootstrap', 'Materialize CSS', 'HTML5', 'CSS3', 'JavaScript']
+    technologies: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS']
   },
   {
     title: 'DevOps & Infrastructure',
@@ -32,7 +32,7 @@ export const techStack = [
   },
   {
     title: 'Additional Technologies',
-    technologies: ['Multi-tenant Architecture', 'Android', 'Git']
+    technologies: ['Multi-tenant Architecture', 'Playwright', 'Android', 'Git']
   },
 ];
 

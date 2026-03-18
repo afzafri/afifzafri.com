@@ -283,11 +283,29 @@ export default function Home() {
                   </div>
                   <p className="timeline-location">{exp.location}</p>
 
-                  <ul className="timeline-responsibilities">
-                    {exp.responsibilities.map((resp, i) => (
-                      <li key={i}>{resp}</li>
-                    ))}
-                  </ul>
+                  {exp.progression ? (
+                    <div className="timeline-progression">
+                      {exp.progression.map((step, stepIndex) => (
+                        <div key={stepIndex} className="progression-step">
+                          <div className="progression-step-header">
+                            <span className="progression-step-role">{step.role}</span>
+                            <span className="progression-step-period">{step.period}</span>
+                          </div>
+                          <ul className="timeline-responsibilities">
+                            {step.responsibilities.map((resp, i) => (
+                              <li key={i}>{resp}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul className="timeline-responsibilities">
+                      {exp.responsibilities.map((resp, i) => (
+                        <li key={i}>{resp}</li>
+                      ))}
+                    </ul>
+                  )}
 
                   {exp.skills && (
                     <div className="timeline-skills">
