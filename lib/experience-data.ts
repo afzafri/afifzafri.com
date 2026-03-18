@@ -27,7 +27,8 @@ export const experiences: Experience[] = [
       "Work closely with clients to gather requirements and deliver tailored enterprise solutions",
       "Foster effective communication, collaboration, and technical alignment within the team",
       "Introduced new tools to boost productivity and incorporate AI and LLM technologies into the development workflow"
-    ]
+    ],
+    skills: ['Laravel', 'PHP', 'MySQL', 'React', 'Docker', 'AWS', 'OpenAI', 'Team Management', 'CI/CD']
   },
   {
     id: 2,
@@ -43,7 +44,8 @@ export const experiences: Experience[] = [
       "Delivered multiple large-scale projects for enterprise clients",
       "Led the migration of legacy systems to modern, Laravel-based applications",
       "Mentored and trained interns and junior developers, ensuring adherence to best practices and code quality standards"
-    ]
+    ],
+    skills: ['Laravel', 'PHP', 'MySQL', 'RESTful APIs', 'Vue.js', 'JavaScript', 'Docker']
   },
   {
     id: 3,
@@ -58,7 +60,8 @@ export const experiences: Experience[] = [
       "Introduced the Laravel framework to the team and led the transition for ongoing development",
       "Initiated backend development for Leaf CRM as the sole backend developer",
       "Collaborated with the mobile app team to design and implement RESTful APIs"
-    ]
+    ],
+    skills: ['Laravel', 'PHP', 'MySQL', 'RESTful APIs']
   },
   {
     id: 4,
@@ -71,7 +74,8 @@ export const experiences: Experience[] = [
     responsibilities: [
       "Developed a Laravel web application with RESTful APIs",
       "Built a hybrid mobile application"
-    ]
+    ],
+    skills: ['Laravel', 'PHP', 'RESTful APIs', 'Hybrid Mobile']
   },
   {
     id: 5,
@@ -84,6 +88,7 @@ export const experiences: Experience[] = [
     responsibilities: [
       "Developed intranet web and hybrid mobile applications for inventory management and infrastructure department",
       "Assisted the Infrastructure team with networking and IT support tasks"
-    ]
+    ],
+    skills: ['PHP', 'JavaScript', 'Hybrid Mobile', 'Networking']
   }
 ];
