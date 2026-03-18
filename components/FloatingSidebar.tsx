@@ -76,6 +76,7 @@ export default function FloatingSidebar() {
                         onSetActive={() => handleSetActive(key)}
                         className="floating-sidebar-item"
                         aria-label={label}
+                        aria-current={isActive ? 'true' : undefined}
                     >
                         {/* icon - always visible */}
                         <Icon

@@ -18,16 +18,14 @@ import Masonry from 'react-masonry-css';
 
 // Enhanced section reveal animation variants
 const sectionReveal = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 40,
-    scale: 0.95,
-    filter: 'blur(10px)'
+    filter: 'blur(4px)'
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    scale: 1,
     filter: 'blur(0px)',
     transition: {
       duration: 0.8
@@ -36,17 +34,13 @@ const sectionReveal = {
 };
 
 const itemReveal = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 30,
-    scale: 0.9,
-    filter: 'blur(8px)'
   },
-  visible: (i: number) => ({ 
-    opacity: 1, 
+  visible: (i: number) => ({
+    opacity: 1,
     y: 0,
-    scale: 1,
-    filter: 'blur(0px)',
     transition: {
       duration: 0.6,
       delay: i * 0.1
@@ -71,7 +65,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main id="main-content">
       <FloatingSidebar />
       <ThemeToggle />
 
@@ -474,8 +468,8 @@ export default function Home() {
               <motion.div
                 key={`${activeProjectType}-${project.id}`}
                 className="project-item"
-                initial={{ opacity: 0, y: 30, scale: 0.9, filter: 'blur(8px)' }}
-                whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
