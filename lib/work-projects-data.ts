@@ -62,4 +62,38 @@ export const workProjects = [
     ],
     timeline: "Jun 2024 - Present",
   },
+  {
+    id: 'ai-chatbot',
+    title: 'AI Chatbot',
+    subtitle: 'Multi-Tenant AI Chatbot Platform',
+    url: 'https://www.redant.my/portfolio/panasonic-ai-chatbot/',
+    role: 'Lead Developer',
+    description: 'A country-scoped SaaS platform for deploying AI-powered chatbots with multi-provider support, RAG-based knowledge retrieval, and real-time streaming responses. Serves enterprise clients across Malaysia, Philippines, and Vietnam with multilingual support.',
+    screenshot: '/images/work/chatbot-screenshot.webp',
+    keyContributions: [
+      'Built RAG pipeline with document parsing, vector embeddings, and semantic search using pgvector',
+      'Integrated multiple AI providers (OpenAI, Gemini, Qwen, DeepSeek) via factory pattern',
+      'Implemented smart conversation memory with 60-80% token savings through summarization',
+      'Developed analytics dashboard with auto question categorization and feedback collection',
+      'Built real-time streaming responses via Server-Sent Events',
+      'Added vision-based document parsing for charts, tables, and diagrams'
+    ],
+    integrations: [
+      'OpenAI',
+      'Google Gemini',
+      'Alibaba Qwen',
+      'DeepSeek',
+      'pgvector',
+      'AWS S3',
+    ],
+    techStack: [
+      'Laravel',
+      'PHP',
+      'PostgreSQL',
+      'Redis',
+      'Docker',
+      'JavaScript',
+    ],
+    timeline: "2024 - Present",
+  },
 ];

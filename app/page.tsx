@@ -334,11 +334,7 @@ export default function Home() {
             <ShinyText>Work</ShinyText> Projects
           </motion.h2>
 
-          <Masonry
-            breakpointCols={breakpointColumns}
-            className="work-projects-list"
-            columnClassName="work-projects-list-column"
-          >
+          <div className="work-projects-list">
             {workProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -349,77 +345,78 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
               >
-                {/* Project Header */}
-                <div className="work-project-header">
-                  <h3 className="work-project-title">{project.title}</h3>
-                  <p className="work-project-subtitle">{project.subtitle}</p>
-                  <span className="work-project-role glass-tag">{project.role}</span>
-                </div>
-
-                {/* Project Screenshot */}
                 <div className="work-project-screenshot">
                   <img src={project.screenshot} alt={`${project.title} screenshot`} loading="lazy" />
                 </div>
 
-                {/* Project Description */}
-                <p className="work-project-description">{project.description}</p>
-
-                {/* Key Contributions */}
-                {project.keyContributions && (
-                  <div className="work-project-features">
-                    <h4>Key Contributions</h4>
-                    <ul>
-                      {project.keyContributions.map((contribution, i) => (
-                        <li key={i}>{contribution}</li>
-                      ))}
-                    </ul>
+                <div className="work-project-body">
+                  {/* Project Header */}
+                  <div className="work-project-header">
+                    <h3 className="work-project-title">{project.title}</h3>
+                    <p className="work-project-subtitle">{project.subtitle}</p>
+                    <span className="work-project-role glass-tag">{project.role}</span>
                   </div>
-                )}
 
-                {/* Integrations */}
-                {project.integrations && (
-                  <div className="work-project-integrations">
-                    <h4>Integration Points</h4>
-                    <div className="tech-tags">
-                      {project.integrations.map((integration, i) => (
-                        <span key={i} className="tech-tag">{integration}</span>
-                      ))}
+                  {/* Project Description */}
+                  <p className="work-project-description">{project.description}</p>
+
+                  {/* Key Contributions */}
+                  {project.keyContributions && (
+                    <div className="work-project-features">
+                      <h4>Key Contributions</h4>
+                      <ul>
+                        {project.keyContributions.map((contribution, i) => (
+                          <li key={i}>{contribution}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Integrations */}
+                  {project.integrations && (
+                    <div className="work-project-integrations">
+                      <h4>Integration Points</h4>
+                      <div className="tech-tags">
+                        {project.integrations.map((integration, i) => (
+                          <span key={i} className="tech-tag">{integration}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Tech Stack */}
+                  <div className="work-project-tech">
+                    <h4>Tech Stack</h4>
+
+                    <div className="project-meta">
+                      <div className="tech-tags">
+                        {project.techStack.map((tech, i) => (
+                          <span key={i} className="tech-tag">{tech}</span>
+                        ))}
+                      </div>
+
+                      {project.timeline && (
+                        <p className="project-timeline">{project.timeline}</p>
+                      )}
                     </div>
                   </div>
-                )}
 
-                {/* Tech Stack */}
-                <div className="work-project-tech">
-                  <h4>Tech Stack</h4>
-
-                  <div className="project-meta">
-                    <div className="tech-tags">
-                      {project.techStack.map((tech, i) => (
-                        <span key={i} className="tech-tag">{tech}</span>
-                      ))}
-                    </div>
-
-                    {project.timeline && (
-                      <p className="project-timeline">{project.timeline}</p>
-                    )}
+                  {/* Project Link */}
+                  <div className="work-project-links">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener"
+                      className="work-project-link"
+                    >
+                      <ExternalLink size={16} />
+                      Visit {project.title}
+                    </a>
                   </div>
-                </div>
-
-                {/* Project Link */}
-                <div className="work-project-links">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener"
-                    className="work-project-link"
-                  >
-                    <ExternalLink size={16} />
-                    Visit {project.title}
-                  </a>
                 </div>
               </motion.div>
             ))}
-          </Masonry>
+          </div>
 
           <motion.p
             className="section-note"
