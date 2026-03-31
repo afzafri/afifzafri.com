@@ -85,7 +85,7 @@ export const personalProjects = [
     stack: ["PHP", "JavaScript"],
     timeline: "Apr 2016 - Present",
     github: "https://github.com/afzafri/UiTM-Timetable-Generator",
-    demo: "https://uitmtimetable.skrin.xyz",
+    demo: "https://uitmtimetable.com",
     type: "web"
   },
   {
