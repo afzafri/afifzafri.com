@@ -1,11 +1,4 @@
 {
-  "updatedAt": 1788320000,
-  "books": [
-    {
-      "title": "SEED PLACEHOLDER — if you see this, the build fetch did not run",
-      "author": null,
-      "percentage": 0,
-      "lastReadAt": null
-    }
-  ]
+  "updatedAt": 0,
+  "books": []
 }
