@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaTiktok, FaEnvelope } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { Users, Handshake, Code2, Server, Rocket } from 'lucide-react';
+import { Users, Handshake, Code2, Server, Rocket, Bot, Gamepad2, Car, BookOpen } from 'lucide-react';
 
 export const socialLinks = [
   { icon: FaLinkedin, url: 'https://www.linkedin.com/in/afifzafri/', label: 'LinkedIn' },
@@ -42,4 +42,11 @@ export const whatIDo = [
   { title: 'Full-Stack Development', desc: 'Build production Laravel backends with RESTful APIs, real-time integrations, and React/Vue frontends', icon: Code2 },
   { title: 'Infrastructure Management', desc: 'Provision and maintain AWS, Azure, and on-premise environments for enterprise clients', icon: Server },
   { title: 'DevOps & Deployment', desc: 'Implement CI/CD pipelines with Docker-based containerized deployments across cloud providers', icon: Rocket }
+];
+
+export const hobbies = [
+  { label: 'Gundam Model Kits', icon: Bot },
+  { label: 'Gaming', icon: Gamepad2 },
+  { label: 'Sim Racing', icon: Car },
+  { label: 'Reading', icon: BookOpen },
 ];

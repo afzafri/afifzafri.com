@@ -1522,3 +1522,108 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* ===== Off the Clock (hobbies) ===== */
+.hobbies {
+  display: block;
+}
+
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hobby-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: var(--color-tag-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.hobby-tag svg {
+  color: var(--color-accent-blue);
+  flex-shrink: 0;
+}
+
+/* ===== Currently Reading (minimal, inline under About) ===== */
+.currently-reading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.currently-reading:hover {
+  background: var(--color-bg-card-hover);
+}
+
+.cr-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent-blue);
+  flex-shrink: 0;
+}
+
+.cr-text {
+  min-width: 0;
+}
+
+.cr-label {
+  color: var(--color-text-lighter);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.cr-title {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.cr-author {
+  color: var(--color-text-light);
+}
+
+.cr-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.cr-pct {
+  font-weight: 600;
+  color: var(--color-accent-blue);
+}
+
+.cr-none {
+  color: var(--color-text-light);
+}
+
+.cr-when {
+  color: var(--color-text-lighter);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .cr-meta {
+    margin-left: 0;
+  }
+}

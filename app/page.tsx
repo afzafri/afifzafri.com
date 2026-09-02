@@ -4,9 +4,10 @@ import SocialIcon from '@/components/SocialIcon';
 import FloatingSidebar from '@/components/FloatingSidebar';
 import ThemeToggle from '@/components/ThemeToggle';
 import Footer from '@/components/Footer';
+import CurrentlyReading from '@/components/CurrentlyReading';
 import ShinyText from '@/components/ShinyText';
 import ShinyButton from '@/components/ShinyButton';
-import { socialLinks, techStack, whatIDo } from '@/lib/portfolio-data';
+import { socialLinks, techStack, whatIDo, hobbies } from '@/lib/portfolio-data';
 import { personalProjects, projectTypes } from '@/lib/personal-projects-data';
 import { workProjects } from '@/lib/work-projects-data';
 import { experiences } from '@/lib/experience-data';
@@ -231,6 +232,34 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
+
+        {/* Off the Clock */}
+        <motion.h3
+          className="subsection-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          Off the Clock
+        </motion.h3>
+        <motion.div
+          className="hobbies"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="hobby-tags">
+            {hobbies.map((hobby, i) => (
+              <span key={i} className="hobby-tag">
+                <hobby.icon size={15} strokeWidth={1.8} />
+                {hobby.label}
+              </span>
+            ))}
+          </div>
+          <CurrentlyReading />
+        </motion.div>
       </section>
       </Element>
 

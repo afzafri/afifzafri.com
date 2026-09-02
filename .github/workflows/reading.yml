@@ -1,0 +1,22 @@
+name: Trigger reading-snapshot rebuild
+
+# Pings the Cloudflare Pages Deploy Hook on a schedule. Cloudflare's build
+# step re-runs scripts/fetch-reading.mjs, so the fresh "currently reading"
+# snapshot is baked into the deploy. Nothing is ever committed to this repo.
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # every 6 hours
+  workflow_dispatch: {}    # manual "Run workflow" button
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Cloudflare deploy hook
+        run: |
+          if [ -z "${{ secrets.CF_DEPLOY_HOOK }}" ]; then
+            echo "CF_DEPLOY_HOOK secret is not set." >&2
+            exit 1
+          fi
+          curl -fsS -X POST "${{ secrets.CF_DEPLOY_HOOK }}" && echo "Rebuild triggered."
