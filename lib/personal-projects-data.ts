@@ -7,6 +7,17 @@ export const projectTypes = [
 
 export const personalProjects = [
   {
+    id: "character-art",
+    title: "Character Art",
+    subtitle: "KOReader Plugin: See Book Characters as Fan Art",
+    description: "A KOReader plugin that turns a highlighted character name into fan art from the book's wiki, without leaving the page. It works just like the built-in dictionary. It resolves messy highlights to the right wiki article, gathers credited artwork, and speaks plain MediaWiki so it works with Fandom and independent wikis alike. Contains no AI: it only fetches and displays what a wiki already hosts, crediting the original artists.",
+    stack: ["Lua", "KOReader", "MediaWiki API"],
+    timeline: "Sep 2026 - Present",
+    github: "https://github.com/afzafri/charart.koplugin",
+    tag: "New",
+    type: "library"
+  },
+  {
     id: "modkit-swatch",
     title: "ModKit Swatch",
     subtitle: "Gunpla & Model Kit Paint Color Matcher",
@@ -21,7 +32,7 @@ export const personalProjects = [
     id: "link2book",
     title: "Link2Book",
     subtitle: "Web Article to EPUB Converter",
-    description: "Converts web article links into clean EPUB books. Uses Playwright with stealth to render JavaScript-heavy pages, extract full article content, and package it with embedded images into a valid EPUB 3 file — ready for Apple Books, Kindle, or any e-reader.",
+    description: "Converts web article links into clean EPUB books. Uses Playwright with stealth to render JavaScript-heavy pages, extract full article content, and package it with embedded images into a valid EPUB 3 file, ready for Apple Books, Kindle, or any e-reader.",
     stack: ["Next.js", "TypeScript", "Playwright", "JSZip", "sharp"],
     timeline: "Feb 2026 - Present",
     github: "https://github.com/afzafri/link2book",
