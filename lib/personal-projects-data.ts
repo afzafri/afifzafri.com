@@ -1,7 +1,7 @@
 export const projectTypes = [
   { key: 'web', label: 'Web' },
   { key: 'mobile', label: 'Mobile' },
-  { key: 'library', label: 'Library' },
+  { key: 'library', label: 'Packages' },
   { key: 'research', label: 'Research' },
 ];
 
@@ -14,7 +14,7 @@ export const personalProjects = [
     stack: ["Lua", "KOReader", "MediaWiki API"],
     timeline: "Sep 2026 - Present",
     github: "https://github.com/afzafri/charart.koplugin",
-    tag: "New",
+    tag: "Plugin",
     type: "library"
   },
   {
@@ -125,6 +125,7 @@ export const personalProjects = [
     stack: ["PHP"],
     timeline: "May 2016 - Jan 2020",
     github: "https://github.com/afzafri/Waktu-Solat-API",
+    tag: "API",
     type: "library"
   },
   {
@@ -179,6 +180,7 @@ export const personalProjects = [
     timeline: "Dec 2016 - Present",
     packagist: "https://packagist.org/packages/afzafri/",
     services: ["Pos Laju", "Ninja Van"],
+    tag: "Library",
     type: "library"
   }
 ];
