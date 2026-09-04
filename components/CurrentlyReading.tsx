@@ -2,7 +2,18 @@
 
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
-import readingData from '@/lib/reading-data.json';
+import readingRaw from '@/lib/reading-data.json';
+
+// Explicit type so the seed can be an empty { books: [] } fallback without
+// TypeScript inferring `never[]` (which breaks book.percentage access).
+type ReadingBook = {
+  title: string;
+  author: string | null;
+  percentage: number;
+  lastReadAt: number | null;
+};
+type ReadingData = { updatedAt: number; books: ReadingBook[] };
+const readingData = readingRaw as ReadingData;
 
 // Relative label computed against the baked snapshot time so the value is a
 // build-time constant (no client/server hydration mismatch).
