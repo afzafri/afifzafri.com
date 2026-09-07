@@ -54,13 +54,14 @@ export default function FloatingSidebar() {
         window.history.pushState(null, '', `#${section}`);
     };
 
+    // No JS entrance animation here: persistent nav chrome must never gate its
+    // visibility behind an rAF-driven animation. On mobile, rAF can be throttled
+    // until first interaction, which left the dock invisible until the user
+    // scrolled. Positioning is handled entirely in CSS.
     return (
         <motion.nav
             aria-label="Quick navigation"
             className="floating-sidebar"
-            initial={{ opacity: 0, x: 20, y: '-50%' }}
-            animate={{ opacity: 1, x: 0, y: '-50%' }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
         >
             {NAV.map(({ key, label, icon: Icon }) => {
                 const isActive = active === key;

@@ -38,14 +38,14 @@ export default function ThemeToggle() {
     }
   };
 
+  // No opacity/scale entrance: it gated visibility behind an rAF animation that
+  // can be throttled on mobile until first scroll, leaving the button invisible.
+  // whileTap stays for tap feedback.
   return (
     <motion.button
       onClick={cycleTheme}
       className="theme-toggle"
       aria-label={getLabel()}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.3, delay: 0.8 }}
       whileTap={{ scale: 0.95 }}
     >
       <span className="theme-toggle-icon">{getIcon()}</span>
