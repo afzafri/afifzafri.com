@@ -1305,8 +1305,12 @@ body {
 /* Responsive - Mobile */
 @media (max-width: 768px) {
   .hero-section {
+    /* Dynamic viewport height: tracks the visible area as the mobile browser
+       toolbar shows/hides, so the flex-centered hero stays centered. Using svh
+       here pins the hero to the small (toolbar-visible) viewport, which leaves
+       the content pushed up once the toolbar collapses. Falls back to the base
+       rule's 100vh where dvh is unsupported. */
     min-height: 100dvh;
-    min-height: 100svh;
   }
 
   .hero-title {

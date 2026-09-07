@@ -87,7 +87,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              👋🏻 Hi! My name is <ShinyText className="name-nowrap">Afif Zafri</ShinyText>.
+              👋🏻 Hi! My name is <span className="name-nowrap"><ShinyText>Afif Zafri</ShinyText>.</span>
             </motion.h1>
             <motion.p
               className="hero-subtitle"
