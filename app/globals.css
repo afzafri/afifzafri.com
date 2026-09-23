@@ -1293,13 +1293,37 @@ textarea {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
 }
 
 .footer-copyright {
   color: var(--color-text-light);
   font-size: 0.9rem;
   text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-blue);
 }
 
 /* Tablet - What I Do grid */
@@ -1506,9 +1530,15 @@ textarea {
     margin-top: 0.5rem;
   }
 
+  /* Bottom padding clears the fixed nav dock (56px tall, 20px from the bottom) */
   .footer {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem calc(76px + 1.5rem);
     margin-top: 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    padding: 0;
   }
 
   .footer-copyright {
